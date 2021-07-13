@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mali:ital@1&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <title>Frontend Notes Login Page</title>
+    <title>Edit Post</title>
 
     <link rel="stylesheet" href="css/style.css"
 </head>
@@ -15,32 +15,45 @@
 <body>
     <div class="wrapper">
         <Nav class="menu__container"></Nav>
-
         <main>
+            
+            <section>
+                <h1>Edit Post</h1>
+                
+                <div class="loading">Loading post...</div>
 
-            <div class="login__container">
-    
-                <h1>Login</h1>
-    
-                <form>
+                <form class="edit__form">
+
                     <div class="message__container"></div>
-    
-                    <div>
-                        <label for="username"> Username/email</label>
-                        <input id="username" />
-                    </div>
-                    <div>
-                        <label for="password"> Password</label>
-                        <input id="password" type="pasword" />
-                    </div>
-                    <button>Log In</button>
-                </form>
-            </div>
 
+                    <div>
+                        <label for="title">Title</label>
+                        <input id="title" />
+                    </div>
+
+                    <div>
+                        <label for="content">Content</label>
+                        <textarea id="content"></textarea>
+                    </div>
+
+                    <input id="id" type="hidden"/>  
+
+                    <div>
+                        <button id="update">Update Post</button>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="delete__container">
+                        
+                    </div>
+                </form>
+
+            </section>
         </main>
     </div>
     
     
-    <script src="js/login.js" type="module"></script>
+    <script src="js/editpost.js" type="module"></script>
 </body>
 </html>

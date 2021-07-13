@@ -27,6 +27,13 @@ export function getUsername() {
     return null;  //if username does not exist in storage, return null
 }
 
+
+// ========== function that clears local storage ========= //
+
+export function clearlocalStorage () {
+    localStorage.clear();
+}
+
 // ========== local functions used by the above functions to stringify or parse values to/from local storage ========== //
 
 function saveToStorage(key, value) {
@@ -37,8 +44,8 @@ function getFromStorage(key) {
     const value = localStorage.getItem(key);
 
     if (!value) {
-        return [];
-    }
+        return null;
+    } // default anyway, but just to make things clear
 
     return JSON.parse(value);
 }

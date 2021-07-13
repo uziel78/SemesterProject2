@@ -3,7 +3,16 @@ import createMenu from "./components/createMenu.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./constants/url.js";
 
+// route protection
+const token = getToken();
+
+if (!token) {
+    location.href = "/";
+}
+
 createMenu();
+
+// ========== Global Variables ========= //
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
@@ -14,6 +23,11 @@ const status = "publish"; //needed to change post from draft to be directly publ
 
 form.addEventListener("submit", submitForm);
 
+
+
+
+// ========== Function that resets form, checks for content and inputs arguments to nested function ========== //
+
 function submitForm(event) {
     event.preventDefault();
 
@@ -21,9 +35,10 @@ function submitForm(event) {
 
     const titleValue = title.value.trim();
     const contentValue = content.value.trim();
-    // Note: categories dropped as I could not get it to work with the worpress API
-
-
+    // Note: categories dropped as I could not get it to work with the worpress API (all that shows on object is: categories: Array(1)
+                                                                                                                    //0: 10
+                                                                                                                    //length: 1
+                                                                                                                    //__proto__: Array(0) )
     //console.log("titleValue", titleValue );
 
     if (titleValue.length === 0 || contentValue.length === 0) {
@@ -33,12 +48,12 @@ function submitForm(event) {
     addPost(titleValue, contentValue);
 }
 
+// ========== nested function that directly adds a post to wordrpess site, with jwt token validation (token function call above) ========== //
+
 async function addPost(title, content) {
     const url = baseUrl + "/wp-json/wp/v2/posts";
 
     const data = JSON.stringify({ title: title, content: content, status: status });
-
-    const token = getToken();
 
     const options = {
         method: "POST",
@@ -60,7 +75,7 @@ async function addPost(title, content) {
 
         if (json.message) {
             displayMessage("error", json.message, ".message__container");
-        } // note: wordpress api does not seem to have a "error" property
+        } // note: wordpress api does not seem to have a "error" property so "message" is used
 
         console.log(json);
     } catch (error) {

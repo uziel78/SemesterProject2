@@ -1,7 +1,6 @@
 import { displayMessage } from "./components/displayMessage.js";
-import createMenu from "./components/createMenu.js";
 
-// ========== function that renders html content on the index page ========== //
+// ========== function that renders html content/posats on the index page ========== //
 
 export function createPosts(posts) {
 
@@ -15,10 +14,8 @@ export function createPosts(posts) {
     }
 
     for (let i = 0; i < posts.length; i++) {
-        postContainer.innerHTML += `<div class="posts">
-                                        <ul>
-                                            <li><h4 class="post__heading">${posts[i].slug}</h4></li>
-                                        <ul>
-                                    </div>`;
+        postContainer.innerHTML += `<a class="posts" href="edit.html?id=${posts[i].id}">
+                                        <h4 class="post__heading">${posts[i].title.rendered}</h4>
+                                    </a>`;
     }  
 }
