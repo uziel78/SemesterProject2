@@ -15,13 +15,13 @@ export default function createMenu() {
   // create a variable that is set to "Login" link as default
   let authLink = `<a href="login.html" class="${
     pathname === "/login.html" ? "active" : ""
-  }">Login</a>`;
+  }" role="login button"><i class="fas fa-sign-in-alt"></i></a>`;
 
   // if logged in (username gotten from localstorage), then replace variable content with new links instead
   if (username) {
-    authLink = `<a href="add.html" class="${
+    authLink = `<div class="navlinks"><a href="add.html" class="${
       pathname === "/add.html" ? "active" : ""
-    }">Add Post</a>
+    }" role="add post""><i class="fas fa-plus-square"></i></a></div>
                     <button id="logoutBtn">Logout ${username}</button>`;
   }
 
@@ -29,15 +29,15 @@ export default function createMenu() {
 
   // add menu container on page and render Home + autlinke variable links on it
   container.innerHTML = `<div class="navbar">
-                                <div class="logo__container">LoGo</div>
+                                <div class="logo__container" role="logo with link to homepage"><a href="index.html"><i class="fas fa-pencil-alt"></i> Frontend Notes</a></div>
                                 <div class="navlinks">
-                                    <a href="/" class="${
-                                      pathname === "/" ||
+                                    <a href="index.html" class="${
+                                      pathname === "index.html" ||
                                       pathname === "index.html"
                                         ? "active"
                                         : ""
-                                    }">Home</a>
-                                    ${authLink}
+                                    }" role="back to homepage"><i class="fas fa-home"></i></a>
+                                    <div>${authLink}</div>
                                 </div>
                         </div>`; //applies "active" class to current page.
 
