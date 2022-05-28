@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400&family=Exo:ital,wght@0,400;0,700;1,400&family=Meddon&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/eb3a4cfb19.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400&family=Exo:ital,wght@0,400;0,700;1,400&family=Meddon&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/eb3a4cfb19.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Add Post</title>
 
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <Nav class="menu__container"></Nav>
-        
-        <main>         
-            <section>
-                <h1>Add Post:</h1>
-                
-                <form>
+      <nav class="menu__container"></nav>
 
-                    <div class="message__container"></div>
-    
-                    <div>
-                        <label for="title">Title</label>
-                        <input id="title" placeholder="input your title here..." />
-                    </div>
-                    <div>
-                        <label for="content">Content</label>
-                        <textarea id="content" placeholder="add content here..."></textarea>
-                    </div>
+      <main>
+        <section>
+          <h1>Add Post:</h1>
 
-                    <button>Add Post</button>
-                </form>
+          <form>
+            <div class="message__container"></div>
 
-            </section>
-        </main>
+            <div>
+              <label for="title">Title</label>
+              <input id="title" placeholder="input your title here..." />
+            </div>
+            <div>
+              <label for="content">Content</label>
+              <textarea
+                id="content"
+                placeholder="add content here..."
+              ></textarea>
+            </div>
+
+            <button>Add Post</button>
+          </form>
+        </section>
+      </main>
     </div>
-    
-    
+
     <script src="js/addpost.js" type="module"></script>
-</body>
+  </body>
 </html>

@@ -1,7 +1,11 @@
 /* ========== Colour Variables ========= */
 
 * {
---main-txt: rgb(21, 27, 31); /*charcoal*/
---alternate-txt: rgb(252, 255, 224); /* color used on the main paper background instead of white */
---darkgrey: rgb(105,105,105);
+  --main-txt: rgb(21, 27, 31); /*charcoal*/
+  --alternate-txt: rgb(
+    252,
+    255,
+    224
+  ); /* color used on the main paper background instead of white */
+  --darkgrey: rgb(105, 105, 105);
 }
