@@ -61,6 +61,11 @@ Nav {
   margin: 0px 10px;
 }
 
+.fa-sign-in-alt,
+.fa-home {
+  display: none;
+}
+
 #logoutBtn {
   width: auto;
   color: var(--alternate-txt);
@@ -136,6 +141,13 @@ footer {
 @media only screen and (max-width: 768px) {
   .logo__container {
     font-size: 1.5rem;
+  }
+  .txt__alt {
+    display: none;
+  }
+  .fa-sign-in-alt,
+  .fa-home {
+    display: block;
   }
 }
 

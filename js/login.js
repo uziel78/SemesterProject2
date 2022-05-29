@@ -25,7 +25,6 @@ function submitForm(event) {
   }
 
   siteLogin(usernameValue, passwordValue);
-  //console.log(usernameValue, passwordValue);
 }
 
 async function siteLogin(username, password) {
@@ -54,7 +53,7 @@ async function siteLogin(username, password) {
       saveToken(json.token);
       saveUser(json.user_nicename);
 
-      location.href = "/"; //redirects to homepage if successfully loged in
+      location.href = "/"; //redirects to homepage if successfully logged in
     } else {
       displayMessage("warning", "Invalid login details", ".message__container");
     }

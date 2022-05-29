@@ -5,7 +5,6 @@ import logoutButton from "../components/logoutBtn.js";
 export default function createMenu() {
   // sets pathname variable to be equal to location
   const { pathname } = document.location;
-  //console.log(pathname);
 
   const container = document.querySelector(".menu__container");
 
@@ -15,7 +14,7 @@ export default function createMenu() {
   // create a variable that is set to "Login" link as default
   let authLink = `<a href="login.html" class="${
     pathname === "/login.html" ? "active" : ""
-  }" role="login button"><i class="fas fa-sign-in-alt"></i></a>`;
+  }" role="login button"><i class="fas fa-sign-in-alt"></i><span class="txt__alt">Login<span/></a>`;
 
   // if logged in (username gotten from localstorage), then replace variable content with new links instead
   if (username) {
@@ -24,8 +23,6 @@ export default function createMenu() {
     }" role="add post""><i class="fas fa-plus-square"></i></a></div>
                     <button id="logoutBtn">Logout ${username}</button>`;
   }
-
-  //console.log(username);
 
   // add menu container on page and render Home + autlinke variable links on it
   container.innerHTML = `<div class="navbar">
@@ -36,11 +33,10 @@ export default function createMenu() {
                                       pathname === "index.html"
                                         ? "active"
                                         : ""
-                                    }" role="back to homepage"><i class="fas fa-home"></i></a>
+                                    }" role="back to homepage"><i class="fas fa-home"></i><span class="txt__alt">Posts<span/></a>
                                     <div>${authLink}</div>
                                 </div>
                         </div>`; //applies "active" class to current page.
-
-  // create logout button after the menu is created  (see logoutBtn.js)
+  //imported logout btn
   logoutButton();
 }

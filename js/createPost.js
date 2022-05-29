@@ -14,8 +14,6 @@ if (!id) {
 
 const postUrl = baseUrl + "/wp-json/wp/v2/posts/" + id;
 
-//console.log(postUrl);
-
 // ========= Function to generate html content on page ========== //
 
 (async function () {
@@ -34,5 +32,4 @@ const postUrl = baseUrl + "/wp-json/wp/v2/posts/" + id;
   } catch (error) {
     displayMessage("error", error, ".post");
   }
-  //console.log(error);
 })();

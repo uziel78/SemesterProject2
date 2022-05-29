@@ -17,10 +17,9 @@ async function renderPosts() {
     // API Call
     const response = await fetch(wordpressPosts);
     const posts = await response.json();
-    //console.log(posts);
 
     createPosts(posts); // function that populates the posts page
-    searchPosts(posts); // function that allows a filterd search on posts
+    searchPosts(posts); // function that allows a filtered search on posts
     addFooter(); //adds footer content to index.html page
   } catch (error) {
     displayMessage("error", "API call failed", ".posts");

@@ -19,7 +19,6 @@ createMenu();
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-//console.log(id);
 
 // if no id provided, go to homepage
 if (!id) {
@@ -61,7 +60,6 @@ const loading = document.querySelector(".loading");
     console.log(json);
   } catch (error) {
     displayMessage("error", "API Call failed", ".message__container");
-    //console.log(error);
   } finally {
     //hide loading indicator regardless of api call's sucess/error and also display the form
     loading.style.display = "none";
@@ -103,7 +101,7 @@ function submitForm(event) {
   updatePost(titleValue, contentValue, idValue);
 }
 
-// ========== Nested ASYNC Function to update post with jwt token authorization ========== //
+// ========== Nested async Function to update post with jwt token authorization ========== //
 
 // function that verifies authorization, then updates data content
 async function updatePost(title, content, id) {
@@ -142,6 +140,5 @@ async function updatePost(title, content, id) {
     }
   } catch (error) {
     displayMessage("error", json.message, ".message__container");
-    //console.log(error);
   }
 }

@@ -21,7 +21,10 @@ body::-webkit-scrollbar {
 
 body,
 html {
-  height: 100%;
+  min-height: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 5px rgb(21, 27, 31);
 }
 
 body {
@@ -48,6 +51,10 @@ main {
   align-items: center;
   flex-direction: column;
   padding-bottom: 60px;
+}
+
+form {
+  max-width: 800px;
 }
 
 footer {
